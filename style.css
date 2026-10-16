@@ -14,7 +14,7 @@ body {
     padding: 15px 0;
 }
 
-/* Контейнер шапки для мобилок: элементы друг под другом (вертикальное меню) */
+/* Контейнер шапки для мобилок: элементы друг под другом */
 .header-container {
     width: 100%;
     display: flex;
@@ -40,12 +40,13 @@ body {
     font-weight: bold;
 }
 
-/* Вертикальное меню на мобильных устройствах (пункт 1 задания) */
+/* Меню на мобильных устройствах теперь выстроено горизонтально в строку */
 #top-nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+    margin-top: 5px;
 }
 
 #top-nav a {
@@ -150,7 +151,7 @@ form textarea:valid {
 }
 
 
-/* --- МЕДИАТЕКА ДЛЯ ПЛАНШЕТОВ И ДЕСКТОПОВ (ДПК / Media Query) --- */
+/* --- МЕДИАТЕКА ДЛЯ ПЛАНШЕТОВ И ДЕСКТОПОВ (ПК / Media Query) --- */
 @media screen and (min-width: 768px) {
     
     /* Возвращаем горизонтальную шапку */
@@ -166,10 +167,11 @@ form textarea:valid {
         margin-bottom: 0;
     }
 
-    /* Меню в строку с разделителями / пробелами */
+    /* Меню в строку с отступами */
     #top-nav {
         flex-direction: row;
         gap: 15px;
+        margin-top: 0;
     }
 
     /* Контент по центру с ограничением 960px */
@@ -183,7 +185,7 @@ form textarea:valid {
 
     /* На десктопе возвращаем исходный порядок: список выше таблицы */
     .content-flex-wrapper {
-        display: block; /* отменяем колонки flex на десктопе, если нужно, либо управляем порядком */
+        display: block;
     }
 
     .list-block {
