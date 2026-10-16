@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание №3 (Юрьев Вячеслав, ПИ-21-1)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <header id="site-header">
+        <div class="header-container">
+            <div id="logo-container">
+                <img id="logo" src="image.jpg" alt="Логотип" width="50" height="50" />
+                <span id="site-title">Юрьев Вячеслав</span>
+            </div>
+            <nav id="top-nav">
+                <a href="#list-section">Ссылки</a>
+                <a href="#table-section">Таблица</a>
+                <a href="#form-section">Анкета</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main class="main-content">
+
+        <h1>Задание №3</h1>
+
+        <!-- Контейнер для управления порядком таблицы и списка через Flex order -->
+        <div class="content-flex-wrapper">
+            
+            <!-- Список гиперссылок (в HTML идет первым, но на мобилке станет вторым через order) -->
+            <section id="list-section" class="list-block">
+                <h2>Маркированный список гиперссылок</h2>
+                <ul>
+                    <li><a href="http://kubsu.ru/">Главная страница КубГУ (http)</a></li>
+                    <li><a href="https://www.kubsu.ru/">Главная страница КубГУ (https)</a></li>
+                    <li><a href="https://www.kubsu.ru/"><img src="image.jpg" alt="Цветок" width="100" /></a></li>
+                    <li><a href="/web1/about.html">Сокращенная ссылка на внутреннюю страницу</a></li>
+                    <li><a href="index.html">Сокращенная ссылка на главную страницу</a></li>
+                    <li><a href="#form-section">Ссылка на фрагмент текущей страницы (к форме)</a></li>
+                    <li><a href="http://example.com/?param1=val1&amp;param2=val2&amp;param3=val3">Ссылка с тремя параметрами в URL</a></li>
+                    <li><a href="http://example.com/?id=123">Ссылка с параметром id в URL</a></li>
+                    <li><a href="./page.html">Относительная ссылка на страницу в текущем каталоге</a></li>
+                    <li><a href="./about/index.html">Относительная ссылка на страницу в каталоге about</a></li>
+                    <li><a href="about/index.html">Относительная ссылка на страницу уровня выше</a></li> 
+                    <li><a href="../../two_levels_up.html">Относительная ссылка на страницу двумя уровнями выше</a></li>
+                    <li>Это <a href="https://www.kubsu.ru/">контекстная гиперссылка</a> (на сайт университета) в тексте абзаца</li>
+                    <li><a href="https://www.ozon.ru/">Ссылка на фрагмент страницы стороннего сайта (Ozon)</a></li>
+                    <li>
+                        <img src="image.jpg" alt="Карта-изображение" usemap="#workmap" width="150" />
+                        <map name="workmap">
+                            <area shape="rect" coords="0,0,50,50" href="https://kubsu.ru" alt="Квадратная область" />
+                            <area shape="circle" coords="100,100,30" href="https://ya.ru" alt="Круглая область" />
+                        </map>
+                    </li>
+                    <li><a href="">Ссылка с пустым href</a></li>
+                    <li><a>Ссылка без href</a></li>
+                    <li><a href="https://example.com" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
+                    <li><noindex><a href="https://example.com">Ссылка, запрещенная для индексации поисковиками</a></noindex></li>
+                    <li>
+                        Нумерованный список ссылок с подписями title:
+                        <ol>
+                            <li><a href="https://kubsu.ru" title="Перейти на сайт КубГУ">КубГУ</a></li>
+                            <li><a href="https://ya.ru" title="Перейти на поисковик Яндекса">Яндекс</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="ftp://username:password@ftp.example.com/file.zip">Ссылка на файл на FTP с авторизацией</a></li>
+                </ul>
+            </section>
+
+            <!-- Таблица данных (в HTML идет второй, но на мобилке станет первой через order) -->
+            <section id="table-section" class="table-block">
+                <h2>Таблица данных</h2>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Столбец 1</th>
+                            <th>Столбец 2</th>
+                            <th>Столбец 3</th>
+                            <th>Столбец 4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" align="center">Объединенная ячейка (1 и 2)</td>
+                            <td>Строка 1, Столбец 3</td>
+                            <td>Строка 1, Столбец 4</td>
+                        </tr>
+                        <tr>
+                            <td>Строка 2, Столбец 1</td>
+                            <td>Строка 2, Столбец 2</td>
+                            <td>Строка 2, Столбец 3</td>
+                            <td>Строка 2, Столбец 4</td>
+                        </tr>
+                        <tr>
+                            <td>Строка 3, Столбец 1</td>
+                            <td colspan="3" align="center">Объединенная ячейка (со 2 по 4)</td>
+                        </tr>
+                        <tr>
+                            <td>Строка 4, Столбец 1</td>
+                            <td>Строка 4, Столбец 2</td>
+                            <td>Строка 4, Столбец 3</td>
+                            <td>Строка 4, Столбец 4</td>
+                        </tr>
+                        <tr>
+                            <td>Строка 5, Столбец 1</td>
+                            <td>Строка 5, Столбец 2</td>
+                            <td>Строка 5, Столбец 3</td>
+                            <td>Строка 5, Столбец 4</td>
+                        </tr>
+                        <tr>
+                            <td>Строка 6, Столбец 1</td>
+                            <td>Строка 6, Столбец 2</td>
+                            <td>Строка 6, Столбец 3</td>
+                            <td>Строка 6, Столбец 4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </div>
+
+        <hr />
+
+        <!-- ФОРМА С ВАЛИДАЦИЕЙ -->
+        <section id="form-section">
+            <h2>Анкета пользователя</h2>
+            <form action="/" method="POST">
+                <label>
+                    ФИО:<br />
+                    <input type="text" name="fio" placeholder="Иванов Иван Иванович" required pattern="^[A-Za-zА-Яа-яЁё]+\s+[A-Za-zА-Яа-яЁё]+\s+[A-Za-zА-Яа-яЁё]+$" title="Введите ровно 3 слова (Фамилия Имя Отчество) только из букв!" />
+                </label><br /><br />
+
+                <label>
+                    Телефон:<br />
+                    <input type="tel" name="phone" placeholder="+7 (800) 000-00-00" required pattern="[\+]?[0-9\s\-\(\)]+" title="Введите номер телефона (только цифры и знак +)" />
+                </label><br /><br />
+
+                <label>
+                    E-mail:<br />
+                    <input type="email" name="email" placeholder="example@mail.ru" required />
+                </label><br /><br />
+
+                <label>
+                    Дата рождения:<br />
+                    <input type="date" name="birthdate" min="1900-01-01" max="2026-10-10" required />
+                </label><br /><br />
+
+                Пол:<br />
+                <label><input type="radio" name="gender" value="male" checked="checked" required /> Мужской</label>
+                <label><input type="radio" name="gender" value="female" required /> Женский</label><br /><br />
+
+                <label>
+                    Любимый язык программирования:<br />
+                    <select name="languages[]" multiple="multiple" required>
+                        <option value="Pascal">Pascal</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="Haskel">Haskel</option>
+                        <option value="Clojure">Clojure</option>
+                        <option value="Prolog">Prolog</option>
+                        <option value="Scala">Scala</option>
+                    </select>
+                </label><br /><br />
+
+                <label>
+                    Биография:<br />
+                    <textarea name="biography" placeholder="Расскажите немного о себе..." required></textarea>
+                </label><br /><br />
+
+                <label>
+                    <input type="checkbox" name="contract_agreed" required /> С контрактом ознакомлен(а)
+                </label><br /><br />
+
+                <input type="submit" value="Сохранить" />
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ПОДВАЛ САЙТА -->
+    <footer id="site-footer">
+        <p>&copy; 2026 Юрьев Вячеслав</p>
+    </footer>
+
+</body>
+</html>
