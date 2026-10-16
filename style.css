@@ -1,0 +1,196 @@
+/* --- БАЗОВЫЕ НАСТРОЙКИ (MOBILE FIRST) --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Шапка сайта на мобилках занимает 100% ширины */
+#site-header {
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 0;
+}
+
+/* Контейнер шапки для мобилок: элементы друг под другом (вертикальное меню) */
+.header-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#logo {
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+#site-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Вертикальное меню на мобильных устройствах (пункт 1 задания) */
+#top-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#top-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+#top-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Основной контент занимает всю ширину на мобилках */
+.main-content {
+    width: 100%;
+    margin: 0;
+    background-color: #ffffff;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Управление порядком через Flex Box (пункт 3 задания) */
+.content-flex-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Таблица визуально выше списка на мобилках */
+.table-block {
+    order: 1;
+}
+
+.list-block {
+    order: 2;
+}
+
+/* Таблица */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+.styled-table th {
+    background-color: #34495e;
+    color: white;
+}
+
+.styled-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Формы и поля */
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+form textarea {
+    height: 80px;
+}
+
+/* Подвал сайта */
+#site-footer {
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+/* Подсветка валидации */
+form input:invalid, 
+form select:invalid, 
+form textarea:invalid {
+    border: 2px solid #e74c3c;
+    background-color: #fdf2f2;
+}
+
+form input:valid, 
+form select:valid, 
+form textarea:valid {
+    border: 1px solid #2ecc71;
+}
+
+
+/* --- МЕДИАТЕКА ДЛЯ ПЛАНШЕТОВ И ДЕСКТОПОВ (ДПК / Media Query) --- */
+@media screen and (min-width: 768px) {
+    
+    /* Возвращаем горизонтальную шапку */
+    .header-container {
+        max-width: 960px;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    #logo-container {
+        margin-bottom: 0;
+    }
+
+    /* Меню в строку с разделителями / пробелами */
+    #top-nav {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    /* Контент по центру с ограничением 960px */
+    .main-content {
+        max-width: 960px;
+        margin: 30px auto;
+        padding: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        box-sizing: content-box;
+    }
+
+    /* На десктопе возвращаем исходный порядок: список выше таблицы */
+    .content-flex-wrapper {
+        display: block; /* отменяем колонки flex на десктопе, если нужно, либо управляем порядком */
+    }
+
+    .list-block {
+        order: unset;
+    }
+
+    .table-block {
+        order: unset;
+    }
+}
